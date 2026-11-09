@@ -1,0 +1,596 @@
+/* 羊毛雷达面板样式：结构/文字/边框/底色一律 --dsw-alias-* 令牌；
+   卡片 artwork（蓝金渐变、闪卡描边、印章红）使用自有颜色。 */
+
+.twr-page {
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: auto;
+  padding: calc(var(--dsh-frame-top-clearance, 0px) + 20px) calc(var(--dsh-frame-leading-clearance, 0px) + 24px) 32px 24px;
+  color: var(--dsw-alias-label-primary);
+  font-family: var(--dsh-font-family-text, inherit);
+}
+
+.twr-titlebar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.twr-title h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.twr-title p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.twr-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.twr-segmented {
+  display: inline-flex;
+  padding: 2px;
+  gap: 2px;
+  border-radius: 8px;
+  background: var(--dsw-alias-bg-layer-2);
+  border: 1px solid var(--dsw-alias-border-l1);
+}
+
+.twr-segmented button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--dsw-alias-label-secondary);
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.twr-segmented button[aria-pressed='true'] {
+  background: var(--dsw-alias-bg-overlay);
+  color: var(--dsw-alias-label-primary);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.12);
+}
+
+.twr-button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--dsw-alias-border-l1);
+  background: var(--dsw-alias-bg-layer-2);
+  color: var(--dsw-alias-label-primary);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.twr-button:hover:not(:disabled) {
+  border-color: var(--dsw-alias-border-l2);
+}
+
+.twr-button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.twr-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.twr-stat {
+  flex: 1 1 180px;
+  min-width: 160px;
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 12px;
+  background: var(--dsw-alias-bg-layer-1);
+  padding: 12px 14px;
+}
+
+.twr-stat .twr-stat-label {
+  font-size: 12px;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.twr-stat .twr-stat-value {
+  margin-top: 4px;
+  font-size: 22px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 28px;
+}
+
+.twr-stat .twr-stat-hint {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.twr-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.twr-search {
+  flex: 1 1 220px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 8px;
+  background: var(--dsw-alias-bg-layer-1);
+  padding: 0 10px;
+  height: 32px;
+}
+
+.twr-search input {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--dsw-alias-label-primary);
+  font-size: 13px;
+  width: 100%;
+  height: 100%;
+}
+
+.twr-chip {
+  appearance: none;
+  border: 1px solid var(--dsw-alias-border-l1);
+  background: var(--dsw-alias-bg-layer-1);
+  color: var(--dsw-alias-label-secondary);
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.twr-chip[aria-pressed='true'] {
+  border-color: var(--dsw-alias-brand-primary);
+  color: var(--dsw-alias-brand-primary);
+}
+
+.twr-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--dsw-alias-label-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.twr-switch .twr-switch-track {
+  width: 32px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--dsw-alias-bg-layer-2);
+  border: 1px solid var(--dsw-alias-border-l1);
+  position: relative;
+  transition: background 120ms ease;
+}
+
+.twr-switch .twr-switch-track::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--dsw-alias-label-secondary);
+  transition: transform 120ms ease;
+}
+
+.twr-switch[aria-checked='true'] .twr-switch-track {
+  background: var(--dsw-alias-brand-primary);
+  border-color: var(--dsw-alias-brand-primary);
+}
+
+.twr-switch[aria-checked='true'] .twr-switch-track::after {
+  transform: translateX(14px);
+  background: #fff;
+}
+
+.twr-group {
+  margin-top: 20px;
+}
+
+.twr-group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.twr-group-title span {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.twr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+/* ── 卡片 ───────────────────────────────────────────── */
+
+.twr-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 14px;
+  background: var(--dsw-alias-bg-layer-1);
+  overflow: hidden;
+  min-height: 148px;
+}
+
+.twr-card.twr-shiny {
+  border-color: color-mix(in srgb, #f4d35e 55%, var(--dsw-alias-border-l2));
+  box-shadow: 0 0 0 1px color-mix(in srgb, #f4d35e 35%, transparent);
+}
+
+.twr-card-art {
+  height: 56px;
+  background: linear-gradient(135deg, #2f7fbf, #1d4e79);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.twr-card.twr-shiny .twr-card-art {
+  background: linear-gradient(135deg, #3f8fd0, #24567f 55%, #b98a1e);
+}
+
+.twr-card-face {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.35);
+  font-variant-numeric: tabular-nums;
+}
+
+.twr-card-icon {
+  position: absolute;
+  left: 10px;
+  bottom: -14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--dsw-alias-border-l1);
+  background: var(--dsw-alias-bg-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.twr-card-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.twr-card-body {
+  padding: 20px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.twr-card-provider {
+  font-size: 12px;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.twr-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.twr-card-note {
+  font-size: 12px;
+  color: var(--dsw-alias-label-secondary);
+  line-height: 17px;
+}
+
+.twr-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.twr-tag {
+  font-size: 11px;
+  color: var(--dsw-alias-label-secondary);
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 6px;
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+
+.twr-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.twr-card-yuan {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dsw-alias-brand-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.twr-card-verified {
+  font-size: 11px;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.twr-card-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.twr-mini {
+  appearance: none;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 1px solid var(--dsw-alias-border-l1);
+  background: var(--dsw-alias-bg-layer-2);
+  color: var(--dsw-alias-label-primary);
+}
+
+.twr-mini:hover:not(:disabled) {
+  border-color: var(--dsw-alias-border-l2);
+}
+
+.twr-mini.twr-primary {
+  background: var(--dsw-alias-brand-primary);
+  border-color: var(--dsw-alias-brand-primary);
+  color: #fff;
+}
+
+.twr-mini:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* 已领取：整卡置灰 + 印章 */
+.twr-card.twr-claimed .twr-card-art {
+  filter: saturate(0.35) brightness(0.92);
+}
+
+.twr-card.twr-claimed .twr-card-title {
+  text-decoration: line-through;
+  text-decoration-color: var(--dsw-alias-label-secondary);
+}
+
+.twr-stamp {
+  position: absolute;
+  top: 34px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  border: 2px solid #b4443a;
+  border-radius: 8px;
+  color: #b4443a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transform: rotate(-12deg);
+  background: color-mix(in srgb, #b4443a 8%, transparent);
+  animation: twr-stamp-drop 180ms ease-out;
+  cursor: pointer;
+}
+
+@keyframes twr-stamp-drop {
+  from {
+    transform: rotate(-12deg) scale(1.6);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(-12deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.twr-legacy {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 11px;
+  color: var(--dsw-alias-state-warn-primary);
+  border: 1px solid var(--dsw-alias-state-warn-primary);
+  border-radius: 6px;
+  padding: 1px 6px;
+  background: var(--dsw-alias-bg-overlay);
+}
+
+.twr-expiry {
+  font-size: 11px;
+  color: var(--dsw-alias-state-warn-primary);
+}
+
+/* ── 卡册 ───────────────────────────────────────────── */
+
+.twr-album-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.twr-album-progress {
+  font-size: 13px;
+  color: var(--dsw-alias-label-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.twr-album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.twr-album-card {
+  position: relative;
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 12px;
+  background: var(--dsw-alias-bg-layer-1);
+  padding: 10px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.twr-album-card.twr-shiny {
+  border-color: color-mix(in srgb, #f4d35e 55%, var(--dsw-alias-border-l2));
+  box-shadow: 0 0 0 1px color-mix(in srgb, #f4d35e 35%, transparent);
+}
+
+.twr-album-face {
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.twr-album-provider {
+  font-size: 11px;
+  color: var(--dsw-alias-label-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.twr-album-level {
+  margin-top: auto;
+  font-size: 11px;
+  color: var(--dsw-alias-brand-primary);
+}
+
+.twr-album-empty {
+  border: 1px dashed var(--dsw-alias-border-l2);
+  border-radius: 12px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dsw-alias-label-secondary);
+  font-size: 12px;
+}
+
+/* ── 状态 ───────────────────────────────────────────── */
+
+.twr-banner {
+  margin-top: 14px;
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-left: 3px solid var(--dsw-alias-state-warn-primary);
+  border-radius: 8px;
+  background: var(--dsw-alias-bg-layer-1);
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--dsw-alias-label-secondary);
+}
+
+.twr-banner.twr-error {
+  border-left-color: var(--dsw-alias-state-error-primary);
+}
+
+.twr-empty {
+  margin-top: 24px;
+  color: var(--dsw-alias-label-secondary);
+  font-size: 13px;
+}
+
+.twr-skeleton {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.twr-skeleton div {
+  height: 148px;
+  border-radius: 14px;
+  background: var(--dsw-alias-bg-layer-2);
+  animation: twr-pulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes twr-pulse {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── composer dock 摘要行 ───────────────────────────── */
+
+.twr-dock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: calc(100% - 2 * var(--dsh-composer-dock-inset, 0px));
+  margin: 0 auto;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--dsw-alias-label-secondary);
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background: transparent;
+  text-align: left;
+}
+
+.twr-dock:hover {
+  color: var(--dsw-alias-label-primary);
+}
+
+.twr-dock .twr-dock-value {
+  color: var(--dsw-alias-label-primary);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}

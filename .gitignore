@@ -1,0 +1,19 @@
+# 依赖与构建产物
+node_modules/
+dist/
+
+# 环境修复记录（ACL 诊断回滚脚本，不属于插件）
+.acl-repair/
+
+# 线上整页快照（夹具生成器的本地缓存，精简版已入库）
+test/fixtures/free-tokens.page.html
+
+# 日志与临时文件
+*.log
+npm-debug.log*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store

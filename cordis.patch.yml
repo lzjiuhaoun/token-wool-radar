@@ -1,0 +1,4 @@
+- insert:
+    - id: token-wool-radar
+      name: 'token-wool-radar'
+      config: {}
