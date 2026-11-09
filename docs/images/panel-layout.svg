@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 1010" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="art" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f7fbf"/><stop offset="1" stop-color="#1d4e79"/>
+    </linearGradient>
+    <linearGradient id="artGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f8fd0"/><stop offset="0.55" stop-color="#24567f"/><stop offset="1" stop-color="#b98a1e"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="1010" rx="14" fill="#fbfcfd" stroke="#dfe6ec"/>
+  <text x="32" y="40" font-size="20" font-weight="700" fill="#1d3a56">整页面板 · 四层结构</text>
+  <text x="32" y="62" font-size="12.5" fill="#6b7d8d">结构示意：文案与数字取自真实组件字典与线上快照（2026-11-09），非运行截图</text>
+
+  <!-- 面板容器 -->
+  <rect x="32" y="80" width="1116" height="850" rx="12" fill="#ffffff" stroke="#c9d6e2"/>
+  <rect x="32" y="80" width="1116" height="26" rx="12" fill="#eaf1f7"/>
+  <text x="46" y="98" font-size="11" fill="#7d93a8">padding-top: var(--dsh-frame-top-clearance) —— 避让宿主窗口按钮</text>
+
+  <!-- ① 标题栏 -->
+  <text x="56" y="136" font-size="15" font-weight="700" fill="#1d3a56">羊毛雷达</text>
+  <text x="140" y="136" font-size="12" fill="#6b7d8d">能免费领的大模型额度，按官方价折成人民币</text>
+  <rect x="900" y="118" width="120" height="26" rx="7" fill="#eef2f6" stroke="#d5dee6"/>
+  <text x="916" y="135" font-size="12" fill="#33506b">列表</text>
+  <rect x="950" y="118" width="70" height="26" rx="7" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="966" y="135" font-size="12" fill="#33506b">卡册</text>
+  <rect x="1032" y="118" width="90" height="26" rx="7" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="1056" y="135" font-size="12" fill="#33506b">↻ 刷新</text>
+  <line x1="56" y1="152" x2="1124" y2="152" stroke="#e6ecf1"/>
+
+  <!-- ② 统计条 -->
+  <rect x="56" y="164" width="344" height="78" rx="10" fill="#f7fafc" stroke="#dde5ec"/>
+  <text x="72" y="186" font-size="11.5" fill="#6b7d8d">今天还能领</text>
+  <text x="72" y="214" font-size="22" font-weight="700" fill="#1d3a56">¥200.97</text>
+  <text x="72" y="232" font-size="10.5" fill="#8a99a8">未领取且已计价条目折算合计</text>
+
+  <rect x="412" y="164" width="344" height="78" rx="10" fill="#f7fafc" stroke="#dde5ec"/>
+  <text x="428" y="186" font-size="11.5" fill="#6b7d8d">下次重置</text>
+  <text x="428" y="214" font-size="22" font-weight="700" fill="#1d3a56">13:00</text>
+  <text x="428" y="232" font-size="10.5" fill="#8a99a8">每日 0 点 / 每周一 / 每月 1 日</text>
+
+  <rect x="768" y="164" width="356" height="78" rx="10" fill="#f7fafc" stroke="#dde5ec"/>
+  <text x="784" y="186" font-size="11.5" fill="#6b7d8d">卡册</text>
+  <text x="784" y="214" font-size="22" font-weight="700" fill="#1d3a56">0/49</text>
+  <text x="784" y="232" font-size="10.5" fill="#8a99a8">另有 0 条已绝版</text>
+
+  <!-- ③ 筛选条 -->
+  <rect x="56" y="258" width="420" height="30" rx="8" fill="#ffffff" stroke="#d5dee6"/>
+  <text x="72" y="277" font-size="12" fill="#9aa8b5">🔍 搜索厂商、标题或标签</text>
+  <rect x="490" y="258" width="52" height="30" rx="15" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="504" y="277" font-size="11.5" fill="#33506b">全部</text>
+  <rect x="550" y="258" width="60" height="30" rx="15" fill="#eef6ff" stroke="#2f7fbf"/>
+  <text x="564" y="277" font-size="11.5" fill="#1d6cb0">每天</text>
+  <rect x="618" y="258" width="60" height="30" rx="15" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="632" y="277" font-size="11.5" fill="#33506b">每周</text>
+  <rect x="686" y="258" width="60" height="30" rx="15" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="700" y="277" font-size="11.5" fill="#33506b">每月</text>
+  <rect x="754" y="258" width="60" height="30" rx="15" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="768" y="277" font-size="11.5" fill="#33506b">其他</text>
+  <rect x="836" y="264" width="34" height="18" rx="9" fill="#eef2f6" stroke="#d5dee6"/>
+  <circle cx="845" cy="273" r="6" fill="#8a99a8"/>
+  <text x="878" y="277" font-size="12" fill="#6b7d8d">只看未领</text>
+
+  <!-- ④ 分组网格 -->
+  <text x="56" y="322" font-size="14" font-weight="700" fill="#1d3a56">每天都能领</text>
+  <text x="146" y="322" font-size="11.5" fill="#8a99a8">13 条</text>
+
+  <!-- 卡片 1：已领取（盖章） -->
+  <rect x="56" y="334" width="330" height="200" rx="12" fill="#ffffff" stroke="#d5dee6"/>
+  <rect x="56" y="334" width="330" height="52" rx="12" fill="url(#art)" opacity="0.55"/>
+  <text x="150" y="366" font-size="17" font-weight="700" fill="#ffffff">200额度</text>
+  <rect x="66" y="372" width="28" height="28" rx="8" fill="#ffffff" stroke="#d5dee6"/>
+  <circle cx="80" cy="386" r="8" fill="none" stroke="#2f7fbf" strokeWidth="1.5"/>
+  <text x="70" y="400" font-size="12" fill="#41586e">豆包</text>
+  <text x="70" y="418" font-size="13" font-weight="600" fill="#1d3a56">豆包电脑版每天签到领 200 额度</text>
+  <text x="70" y="437" font-size="10.5" fill="#6b7d8d">每天 · 未有适用的额度单独售价，不折钱</text>
+  <rect x="70" y="446" width="72" height="18" rx="5" fill="#f2f5f8" stroke="#e0e6ec"/>
+  <text x="78" y="458" font-size="10" fill="#6b7d8d">需登录电脑版</text>
+  <rect x="148" y="446" width="56" height="18" rx="5" fill="#f2f5f8" stroke="#e0e6ec"/>
+  <text x="156" y="458" font-size="10" fill="#6b7d8d">不含 Pro</text>
+  <rect x="210" y="446" width="72" height="18" rx="5" fill="#f2f5f8" stroke="#e0e6ec"/>
+  <text x="218" y="458" font-size="10" fill="#6b7d8d">不含视频生成</text>
+  <text x="70" y="480" font-size="12" font-weight="600" fill="#1d6cb0">不折钱</text>
+  <rect x="252" y="468" width="52" height="22" rx="6" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="264" y="483" font-size="11" fill="#33506b">去领</text>
+  <rect x="310" y="468" width="52" height="22" rx="6" fill="#eef2f6" stroke="#d5dee6"/>
+  <text x="322" y="483" font-size="11" fill="#6b7d8d">已领</text>
+  <text x="70" y="500" font-size="10" fill="#9aa8b5">核实于 2026-11-08</text>
+  <!-- 印章 -->
+  <g transform="rotate(-12 320 400)">
+    <rect x="292" y="374" width="52" height="40" rx="7" fill="#b4443a" fill-opacity="0.08" stroke="#b4443a" strokeWidth="2"/>
+    <text x="304" y="399" font-size="15" font-weight="700" fill="#b4443a">已领</text>
+  </g>
+  <line x1="70" y1="418" x2="386" y2="418" stroke="#9aa8b5" strokeWidth="1"/>
+
+  <!-- 卡片 2 -->
+  <rect x="400" y="334" width="330" height="200" rx="12" fill="#ffffff" stroke="#d5dee6"/>
+  <rect x="400" y="334" width="330" height="52" rx="12" fill="url(#art)"/>
+  <text x="494" y="366" font-size="17" font-weight="700" fill="#ffffff">2000积分</text>
+  <rect x="410" y="372" width="28" height="28" rx="8" fill="#ffffff" stroke="#d5dee6"/>
+  <circle cx="424" cy="386" r="8" fill="none" stroke="#2f7fbf" strokeWidth="1.5"/>
+  <text x="414" y="400" font-size="12" fill="#41586e">秒悟 Meoo</text>
+  <text x="414" y="418" font-size="13" font-weight="600" fill="#1d3a56">秒悟每天登录领 2000 积分</text>
+  <text x="414" y="437" font-size="10.5" fill="#6b7d8d">每天 · 未有适用的积分单独售价，不折钱</text>
+  <text x="414" y="480" font-size="12" font-weight="600" fill="#1d6cb0">不折钱</text>
+  <rect x="596" y="468" width="52" height="22" rx="6" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="608" y="483" font-size="11" fill="#33506b">去领</text>
+  <rect x="654" y="468" width="52" height="22" rx="6" fill="#1d6cb0"/>
+  <text x="666" y="483" font-size="11" fill="#ffffff">盖章</text>
+  <text x="414" y="500" font-size="10" fill="#9aa8b5">核实于 2026-11-08</text>
+
+  <!-- 卡片 3 -->
+  <rect x="744" y="334" width="330" height="200" rx="12" fill="#ffffff" stroke="#d5dee6"/>
+  <rect x="744" y="334" width="330" height="52" rx="12" fill="url(#art)"/>
+  <text x="838" y="366" font-size="17" font-weight="700" fill="#ffffff">200魔粒</text>
+  <rect x="754" y="372" width="28" height="28" rx="8" fill="#ffffff" stroke="#d5dee6"/>
+  <circle cx="768" cy="386" r="8" fill="none" stroke="#2f7fbf" strokeWidth="1.5"/>
+  <text x="758" y="400" font-size="12" fill="#41586e">魔搭社区</text>
+  <text x="758" y="418" font-size="13" font-weight="600" fill="#1d3a56">魔搭社区每天送 200 魔粒调模型 API</text>
+  <text x="758" y="437" font-size="10.5" fill="#6b7d8d">每天 · 短期魔粒尽量当天用完</text>
+  <rect x="758" y="446" width="86" height="18" rx="5" fill="#f2f5f8" stroke="#e0e6ec"/>
+  <text x="766" y="458" font-size="10" fill="#6b7d8d">要绑阿里云账号</text>
+  <rect x="850" y="446" width="66" height="18" rx="5" fill="#f2f5f8" stroke="#e0e6ec"/>
+  <text x="858" y="458" font-size="10" fill="#6b7d8d">需验证邮箱</text>
+  <text x="758" y="480" font-size="12" font-weight="600" fill="#1d6cb0">不折钱</text>
+  <rect x="940" y="468" width="52" height="22" rx="6" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="952" y="483" font-size="11" fill="#33506b">去领</text>
+  <rect x="998" y="468" width="52" height="22" rx="6" fill="#1d6cb0"/>
+  <text x="1010" y="483" font-size="11" fill="#ffffff">盖章</text>
+  <text x="758" y="500" font-size="10" fill="#9aa8b5">核实于 2026-11-08</text>
+
+  <!-- 分组二：其他福利 -->
+  <text x="56" y="572" font-size="14" font-weight="700" fill="#1d3a56">其他福利</text>
+  <text x="132" y="572" font-size="11.5" fill="#8a99a8">26 条</text>
+
+  <rect x="56" y="584" width="330" height="200" rx="12" fill="#ffffff" stroke="#e3cf9a"/>
+  <rect x="56" y="584" width="330" height="52" rx="12" fill="url(#artGold)"/>
+  <text x="150" y="616" font-size="17" font-weight="700" fill="#ffffff">¥33</text>
+  <rect x="66" y="622" width="28" height="28" rx="8" fill="#ffffff" stroke="#d5dee6"/>
+  <circle cx="80" cy="636" r="8" fill="none" stroke="#2f7fbf" strokeWidth="1.5"/>
+  <text x="70" y="650" font-size="12" fill="#41586e">Nace AI</text>
+  <text x="70" y="668" font-size="13" font-weight="600" fill="#1d3a56">Drex 新用户 5 美元模型调用额度</text>
+  <text x="70" y="687" font-size="10.5" fill="#6b7d8d">一次性 · 5 美元，按模型榜汇率</text>
+  <rect x="70" y="696" width="72" height="18" rx="5" fill="#f2f5f8" stroke="#e0e6ec"/>
+  <text x="78" y="708" font-size="10" fill="#6b7d8d">注册满一个月</text>
+  <rect x="148" y="696" width="72" height="18" rx="5" fill="#f2f5f8" stroke="#e0e6ec"/>
+  <text x="156" y="708" font-size="10" fill="#6b7d8d">真人账号认证</text>
+  <text x="70" y="730" font-size="12" font-weight="600" fill="#1d6cb0">¥33.36</text>
+  <text x="150" y="730" font-size="10" fill="#b98a1e">5 天后截止</text>
+  <rect x="252" y="718" width="52" height="22" rx="6" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="264" y="733" font-size="11" fill="#33506b">去领</text>
+  <rect x="310" y="718" width="52" height="22" rx="6" fill="#1d6cb0"/>
+  <text x="322" y="733" font-size="11" fill="#ffffff">盖章</text>
+  <text x="70" y="752" font-size="10" fill="#9aa8b5">核实于 2026-11-08</text>
+
+  <!-- 空组说明 -->
+  <text x="410" y="620" font-size="12" fill="#9aa8b5">每周都能领（当前上游无条目 → 空组不渲染标题）</text>
+  <text x="410" y="644" font-size="12" fill="#9aa8b5">每月都能领 8 条 · ¥43.66</text>
+  <text x="410" y="668" font-size="12" fill="#9aa8b5">解析失败率 &gt; 30% → 卡片降级为仅原链接 + 提示</text>
+  <text x="410" y="692" font-size="12" fill="#9aa8b5">断网 → 保留旧数据 + 顶部提示，不出现假数据</text>
+
+  <!-- dock 摘要行 -->
+  <rect x="200" y="828" width="780" height="30" rx="8" fill="#f7fafc" stroke="#dde5ec"/>
+  <circle cx="222" cy="843" r="7" fill="none" stroke="#6b7d8d" strokeWidth="1.3"/>
+  <circle cx="222" cy="843" r="2.6" fill="none" stroke="#6b7d8d" strokeWidth="1.3"/>
+  <text x="240" y="847" font-size="12" fill="#6b7d8d">羊毛</text>
+  <text x="278" y="847" font-size="12.5" font-weight="700" fill="#1d3a56">¥200.97</text>
+  <text x="352" y="847" font-size="12" fill="#6b7d8d">· 重置 13:00</text>
+  <text x="452" y="847" font-size="12" fill="#6b7d8d">· 卡册 0/49</text>
+  <text x="240" y="900" font-size="11" fill="#9aa8b5">↑ composer dock 摘要行（conversation.composer.dock），点击回到面板</text>
+
+  <text x="32" y="972" font-size="11" fill="#9aa8b5">文案与数字来自 locale 字典与 2026-11-09 线上快照；深浅主题由 --dsw-alias-* 令牌自动切换，卡片 artwork 使用自有颜色</text>
+</svg>

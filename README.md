@@ -1,6 +1,6 @@
 # 羊毛雷达 · Token Wool Radar
 
-> DeepSeek Harness 插件：把散落各处的「大模型免费额度」收进一张雷达图——按官方价折算人民币，能盖章、能收集、能问 Agent。
+> <img src="icon.svg" alt="羊毛雷达图标" width="18" height="18" style="vertical-align:-3px"/> DeepSeek Harness 插件：把散落各处的「大模型免费额度」收进一张雷达图——按官方价折算人民币，能盖章、能收集、能问 Agent。
 
 [English](#token-wool-radar) · 数据来源 [AIHOT](https://aihot.news/free-tokens)（个人非商业使用）
 
@@ -13,6 +13,18 @@
 1. **汇总**：定时抓取 AIHOT 的 Token 羊毛清单，按官方价统一折算成人民币；
 2. **追踪**：领没领、什么时候领的、值多少，盖章可撤销，卡册长期保留（重启不丢）；
 3. **可问**：同一个数据源同时开放给面板和 Agent——直接问「今天有什么羊毛能领」就能拿到结构化答案。
+
+## 界面与架构
+
+**整页面板**（侧栏入口 ↔ `main` 面板；结构示意——文案与数字取自真实组件字典与线上快照，非运行截图）：
+
+![面板结构示意](docs/images/panel-layout.svg)
+
+**系统架构**（Host 半 / Client 半 / 两个调用方 / 持久化）：
+
+![架构与数据流](docs/images/architecture.svg)
+
+> 想在 README 里放真实运行截图：在 Harness 里打开面板后截图，存为 `docs/images/panel.png`（面板）与 `docs/images/dock.png`（摘要行），把上面两行图片地址换过去即可。
 
 ## 功能
 

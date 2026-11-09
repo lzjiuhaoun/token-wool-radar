@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 660" font-family="'PingFang SC','Microsoft YaHei','Segoe UI',sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b7a99"/>
+    </marker>
+    <linearGradient id="hostBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2f7fb"/><stop offset="1" stop-color="#e8f1f8"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="660" rx="14" fill="#fbfcfd" stroke="#dfe6ec"/>
+  <text x="32" y="42" font-size="21" font-weight="700" fill="#1d3a56">羊毛雷达 · 架构与数据流</text>
+  <text x="32" y="66" font-size="13" fill="#6b7d8d">一个操作，两个调用方：UI 动作与 Agent 工具共用同一个 Host 服务方法</text>
+
+  <!-- 上游 -->
+  <rect x="32" y="96" width="220" height="120" rx="10" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="46" y="124" font-size="14" font-weight="700" fill="#1d3a56">上游数据</text>
+  <text x="46" y="148" font-size="12.5" fill="#41586e">aihot.news</text>
+  <text x="46" y="168" font-size="12.5" fill="#41586e">/free-tokens.data</text>
+  <text x="46" y="192" font-size="11.5" fill="#8a99a8">turbo-stream 编码</text>
+
+  <!-- Host 半 -->
+  <rect x="292" y="88" width="470" height="300" rx="12" fill="url(#hostBg)" stroke="#b9ccdd"/>
+  <text x="312" y="116" font-size="14" font-weight="700" fill="#1d3a56">Host 半 · dist/index.js（apply + inject，零外部依赖）</text>
+
+  <rect x="312" y="132" width="200" height="72" rx="8" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="326" y="154" font-size="12.5" font-weight="700" fill="#1d3a56">fetch.ts</text>
+  <text x="326" y="173" font-size="11" fill="#5b7185">浏览器 UA · 8s 超时</text>
+  <text x="326" y="190" font-size="11" fill="#5b7185">指数退避 · 429 Retry-After</text>
+
+  <rect x="526" y="132" width="216" height="72" rx="8" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="540" y="154" font-size="12.5" font-weight="700" fill="#1d3a56">parse.ts</text>
+  <text x="540" y="173" font-size="11" fill="#5b7185">turbo-stream 解码 + 归一化</text>
+  <text x="540" y="190" font-size="11" fill="#5b7185">失败率 &gt; 30% → 降级</text>
+
+  <rect x="312" y="222" width="430" height="66" rx="8" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="326" y="244" font-size="12.5" font-weight="700" fill="#1d3a56">Snapshot（10 分钟内存缓存，手动刷新绕过）</text>
+  <text x="326" y="264" font-size="11" fill="#5b7185">offers[] · ended[] · basis{汇率, 配比} · serverNow · expiresAt</text>
+  <text x="326" y="281" font-size="11" fill="#5b7185">claimStates · album · stats{今天还能领, 下次重置, 卡册}</text>
+
+  <rect x="312" y="306" width="200" height="62" rx="8" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="326" y="328" font-size="12.5" font-weight="700" fill="#1d3a56">WoolService</text>
+  <text x="326" y="347" font-size="11" fill="#5b7185">claim / unclaim / view</text>
+  <text x="326" y="363" font-size="11" fill="#5b7185">一个实现，两个调用方</text>
+
+  <!-- 两个调用方 -->
+  <rect x="802" y="96" width="346" height="128" rx="12" fill="#fdf8ec" stroke="#e3cf9a"/>
+  <text x="820" y="124" font-size="14" font-weight="700" fill="#6b5410">调用方 A · Agent 工具</text>
+  <text x="820" y="148" font-size="12" fill="#5b4d22">ctx.tools.register</text>
+  <text x="820" y="169" font-size="12" fill="#5b4d22">list_free_tokens（cadence/minAmount/</text>
+  <text x="820" y="187" font-size="12" fill="#5b4d22">keyword/onlyUnclaimed）</text>
+  <text x="820" y="209" font-size="12" fill="#5b4d22">check_offer_status（单条状态）</text>
+
+  <rect x="802" y="252" width="346" height="150" rx="12" fill="#eef6ff" stroke="#a9c8e8"/>
+  <text x="820" y="280" font-size="14" font-weight="700" fill="#1d3a56">调用方 B · Client 面板</text>
+  <text x="820" y="304" font-size="12" fill="#33506b">ctx.connection.fetch.register</text>
+  <text x="820" y="325" font-size="12" fill="#33506b">/api/token-wool-radar</text>
+  <text x="820" y="346" font-size="12" fill="#33506b">GET 视图 · POST claim|unclaim|refresh</text>
+  <text x="820" y="367" font-size="12" fill="#33506b">同源 fetch，cookie 自动鉴权</text>
+  <text x="820" y="389" font-size="11.5" fill="#7d93a8">Client 半 dist/client.js（loader 格式）</text>
+
+  <!-- 持久化 -->
+  <rect x="292" y="418" width="470" height="96" rx="12" fill="#f4f1fb" stroke="#c3b8e0"/>
+  <text x="312" y="446" font-size="14" font-weight="700" fill="#3d3462">持久化 · storageDomain（本地声明）</text>
+  <text x="312" y="470" font-size="12" fill="#4c4470">域 token_wool_radar · version 1 · per-record · 表 claims</text>
+  <text x="312" y="490" font-size="12" fill="#4c4470">记录 {offerId, cadence, claimedAt, amountCnyAtClaim, revoked}</text>
+  <text x="312" y="508" font-size="11" fill="#7d7396">落盘 $DSH_HOME/storages/ · 重启保留 · 随 profile 走 · 不写用户 patch</text>
+
+  <!-- Client 注册 -->
+  <rect x="802" y="430" width="346" height="150" rx="12" fill="#ffffff" stroke="#c9d6e2"/>
+  <text x="820" y="456" font-size="13.5" font-weight="700" fill="#1d3a56">浏览器半注册</text>
+  <text x="820" y="478" font-size="12" fill="#41586e">sidebar.panellist → 侧栏入口</text>
+  <text x="820" y="499" font-size="12" fill="#41586e">main（key = token-wool-radar）→ 整页面板</text>
+  <text x="820" y="520" font-size="12" fill="#41586e">conversation.composer.dock → 摘要行</text>
+  <text x="820" y="545" font-size="11.5" fill="#7d93a8">样式只用 --dsw-alias-* 令牌</text>
+  <text x="820" y="564" font-size="11.5" fill="#7d93a8">顶栏避让 --dsh-frame-*-clearance</text>
+
+  <!-- 连线 -->
+  <line x1="252" y1="156" x2="288" y2="156" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="512" y1="168" x2="522" y2="168" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="412" y1="204" x2="412" y2="218" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="512" y1="255" x2="798" y2="160" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="512" y1="268" x2="798" y2="320" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="412" y1="288" x2="412" y2="302" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="512" y1="337" x2="798" y2="330" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="512" y1="337" x2="600" y2="414" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="412" y1="368" x2="412" y2="414" stroke="#5b7a99" strokeWidth="1.6" marker-end="url(#arrow)"/>
+  <line x1="742" y1="400" x2="798" y2="470" stroke="#5b7a99" strokeWidth="1.6" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <text x="616" y="408" font-size="10.5" fill="#8a99a8">domain/changed 后整视图返回</text>
+
+  <!-- 图例 -->
+  <rect x="32" y="540" width="220" height="40" rx="8" fill="#ffffff" stroke="#dfe6ec"/>
+  <text x="46" y="558" font-size="11" fill="#5b7185">实线：数据 / 调用方向</text>
+  <text x="46" y="574" font-size="11" fill="#5b7185">虚线：状态变更回传</text>
+
+  <text x="32" y="638" font-size="11" fill="#9aa8b5">数据来源 aihot.news/free-tokens（个人非商业使用）· 领取记录仅存本地</text>
+</svg>
