@@ -17,6 +17,8 @@
 ## 界面与架构
 
 **整页面板**（侧栏入口 ↔ `main` 面板；结构示意——文案与数字取自真实组件字典与线上快照，非运行截图）：
+![Uploading image.png…]()
+
 
 ![面板结构示意](docs/images/panel-layout.svg)
 
