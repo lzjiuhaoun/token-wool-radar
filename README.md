@@ -70,10 +70,13 @@ aihot.news/free-tokens.data
 ## 开发
 
 ```bash
-node build.mjs                    # esbuild：src/index.ts → dist/index.js；src/client/index.tsx → dist/client.js
-node --test test/*.test.ts        # 40 项测试：线上快照夹具 / 时区周期 / 盖章撤销 / 降级 / 构建产物冒烟 / 工具输出校验
-node scripts/make-page-fixture.mjs  # 重新生成页面回退路径的精简夹具（缺失时自动抓取线上整页）
+pnpm install                       # 安装构建依赖（esbuild / react / react-dom，仅开发用）
+node build.mjs                     # esbuild：src/index.ts → dist/index.js；src/client/index.tsx → dist/client.js
+node --test test/*.test.ts         # 40 项测试：线上快照夹具 / 时区周期 / 盖章撤销 / 降级 / 构建产物冒烟 / 工具输出校验
+node scripts/make-page-fixture.mjs # 重新生成页面回退路径的精简夹具（缺失时自动抓取线上整页）
 ```
+
+插件包本身零运行时依赖（Host 半不 import 任何外部模块，Client 半只用浏览器模块表里的 React）。
 
 目录：
 
